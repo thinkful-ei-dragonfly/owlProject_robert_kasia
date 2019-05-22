@@ -1,10 +1,11 @@
-import react from "react"; // syntax??
+import React from "react"; // syntax??
 import Participant from './Participant'
 
 
 
 function Sidebar(props) {
- const list = props.STORE.Participants;
+ const list = props.participants;
+ let displayStatus;
  const presentPeople = list.map(person => {
     if (person.inSession && person.onStage) {
         displayStatus = "On Stage";
@@ -16,10 +17,12 @@ function Sidebar(props) {
     return <Participant  id={person.id} name={person.name} avatar={person.avatar} displayStatus={displayStatus}/>
  })
     return (
-        <ul>
-           {presentPeople}
-        </ul>
-    )
+        <div className='Sidebar'>
+          <ul>
+             {presentPeople}
+          </ul>
+        </div>
+    );
   
 }
 export default Sidebar;
