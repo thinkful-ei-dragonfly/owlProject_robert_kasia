@@ -3,9 +3,9 @@ import React from "react";
 export default function Stage(props) {
     let participants = props.participants;
     const stageParticipants = participants.filter(person => person.onStage); 
-    const onStage = stageParticipants.map(person =>{
+    const onStage = stageParticipants.map(person => {
         return (
-            <div>
+            <div key={person.id}>
                 <img src={person.avatar} alt={person.name}></img>
                 <p>{person.name}</p>
             </div>

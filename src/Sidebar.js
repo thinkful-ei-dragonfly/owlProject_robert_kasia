@@ -14,7 +14,7 @@ function Sidebar(props) {
       } else {
         displayStatus = "Left Session";
       }
-    return <Participant  id={person.id} name={person.name} avatar={person.avatar} displayStatus={displayStatus}/>
+    return <Participant key={person.id} name={person.name} avatar={person.avatar} displayStatus={displayStatus}/>
  })
     return (
         <div className='Sidebar'>
